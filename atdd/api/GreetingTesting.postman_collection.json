@@ -1,0 +1,55 @@
+{
+	"info": {
+		"_postman_id": "fcafa610-247c-4194-990a-24dd3c576be3",
+		"name": "GreetingTesting",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GreetingSayHelloWorld",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0c44015a-ea2a-496e-b8c8-cacb33b81ac8",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"check http statusCode is OK\", function () {",
+							"    pm.response.to.have.status(200)",
+							"})",
+							"",
+							"pm.test(\"check value inside json is message: hello world\", function () {",
+							"    var greetingResponse = pm.response.json()",
+							"    pm.expect(greetingResponse.message).to.eql(\"hello world\")",
+							"})",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"message\": \"world\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/greeting",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"greeting"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
