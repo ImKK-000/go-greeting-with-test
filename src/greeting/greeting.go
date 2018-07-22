@@ -8,9 +8,11 @@ type Greeting struct {
 	Prefix string
 }
 
+const DEFAULT_EMPTY_STRING = "thailand"
+
 func (g Greeting) Message(message string) string {
 	if len(message) == 0 {
-		return g.makeStringWithPrefix("thailand")
+		return g.makeStringWithPrefix(DEFAULT_EMPTY_STRING)
 	}
 	return g.makeStringWithPrefix(message)
 }
