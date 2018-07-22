@@ -19,7 +19,7 @@ func TestGreetingHandleFunc(t *testing.T) {
 
 	response := responseRecorder.Result()
 	responseBody, _ := ioutil.ReadAll(response.Body)
-	actualResult := string(responseBody)
+	actualResult := strings.TrimSpace(string(responseBody))
 
 	if expectedResult != actualResult {
 		t.Errorf("Expect %v but it got %v", expectedResult, actualResult)
