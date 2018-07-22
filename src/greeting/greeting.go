@@ -1,5 +1,10 @@
 package greeting
 
+const PREFIX = "hello "
+
 func Message(msg string) string {
-	return "hello " + msg
+	if len(msg) == 0 {
+		return PREFIX + "thailand"
+	}
+	return PREFIX + msg
 }
