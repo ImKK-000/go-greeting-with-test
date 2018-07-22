@@ -25,6 +25,7 @@ func HelloPost(responseWriter http.ResponseWriter, request *http.Request) {
 	resposeMessage := ResponseMessage{
 		Message: greeting.Message(requestMessage.Message),
 	}
+	responseWriter.Header().Set("Content-Type", "application/json")
 	encoder := json.NewEncoder(responseWriter)
 	encoder.Encode(resposeMessage)
 }
