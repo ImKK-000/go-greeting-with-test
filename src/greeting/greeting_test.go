@@ -8,9 +8,10 @@ import (
 func TestHelloEmptyString(t *testing.T) {
 	//Arrange
 	expectedResult := "hello thailand"
+	g := Greeting{Prefix: "hello"}
 
 	//Action
-	actualResult := Message("")
+	actualResult := g.Message("")
 
 	//Assert
 	if expectedResult != actualResult {
@@ -21,9 +22,10 @@ func TestHelloEmptyString(t *testing.T) {
 func TestHelloBangkok(t *testing.T) {
 	//Arrange
 	expectedResult := "hello bangkok"
+	g := Greeting{Prefix: "hello"}
 
 	//Action
-	actualResult := Message("bangkok")
+	actualResult := g.Message("bangkok")
 
 	//Assert
 	if expectedResult != actualResult {
@@ -34,9 +36,10 @@ func TestHelloBangkok(t *testing.T) {
 func TestHelloWorld(t *testing.T) {
 	//Arrange
 	expectedResult := "hello world"
+	g := Greeting{Prefix: "hello"}
 
 	//Action
-	actualResult := Message("world")
+	actualResult := g.Message("world")
 
 	//Assert
 	if expectedResult != actualResult {
