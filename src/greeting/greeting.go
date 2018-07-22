@@ -5,14 +5,13 @@ import (
 )
 
 type Greeting struct {
-	Prefix string
+	Prefix             string
+	DefaultEmptyString string
 }
-
-const DEFAULT_EMPTY_STRING = "thailand"
 
 func (g Greeting) Message(message string) string {
 	if len(message) == 0 {
-		return g.makeStringWithPrefix(DEFAULT_EMPTY_STRING)
+		return g.makeStringWithPrefix(g.DefaultEmptyString)
 	}
 	return g.makeStringWithPrefix(message)
 }

@@ -5,10 +5,11 @@ import (
 	"testing"
 )
 
+var g = Greeting{Prefix: "hello", DefaultEmptyString: "thailand"}
+
 func TestHelloEmptyString(t *testing.T) {
 	//Arrange
 	expectedResult := "hello thailand"
-	g := Greeting{Prefix: "hello"}
 
 	//Action
 	actualResult := g.Message("")
@@ -22,7 +23,6 @@ func TestHelloEmptyString(t *testing.T) {
 func TestHelloBangkok(t *testing.T) {
 	//Arrange
 	expectedResult := "hello bangkok"
-	g := Greeting{Prefix: "hello"}
 
 	//Action
 	actualResult := g.Message("bangkok")
@@ -36,7 +36,6 @@ func TestHelloBangkok(t *testing.T) {
 func TestHelloWorld(t *testing.T) {
 	//Arrange
 	expectedResult := "hello world"
-	g := Greeting{Prefix: "hello"}
 
 	//Action
 	actualResult := g.Message("world")
