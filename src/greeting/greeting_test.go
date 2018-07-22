@@ -5,12 +5,12 @@ import (
 	"testing"
 )
 
-func TestHelloWorld(t *testing.T) {
+func TestHelloEmptyString(t *testing.T) {
 	//Arrange
-	expectedResult := "hello world"
+	expectedResult := "hello thailand"
 
 	//Action
-	actualResult := Message("world")
+	actualResult := Message("")
 
 	//Assert
 	if expectedResult != actualResult {
@@ -31,12 +31,12 @@ func TestHelloBangkok(t *testing.T) {
 	}
 }
 
-func TestHelloEmptyString(t *testing.T) {
+func TestHelloWorld(t *testing.T) {
 	//Arrange
-	expectedResult := "hello thailand"
+	expectedResult := "hello world"
 
 	//Action
-	actualResult := Message("")
+	actualResult := Message("world")
 
 	//Assert
 	if expectedResult != actualResult {
